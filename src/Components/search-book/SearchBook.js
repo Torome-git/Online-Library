@@ -13,6 +13,7 @@ function SearchBooks({SearchBook, setSearchBook}) {
             onChange={handleChange}
             value={SearchBook}
             />
+            <i className="glyphicon glyphicon-search"></i>
         </div>
     )
 }
