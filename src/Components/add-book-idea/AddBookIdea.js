@@ -1,20 +1,47 @@
 import React, { useState } from "react";
 
-function AddBookIdea(postBook) {
+function AddBookIdea({handleAddBook}) {
     const [bookData, setBookData] = useState({
         title:"",
         genre:"",
         description:""
     });
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await fetch("", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title: bookData.title,
+                    genre: bookData.genre,
+                    description: bookData.description, 
+                }),
+            });
+            const jsonRes = await res.json();
+            handleAddBook(jsonRes);
+            setBookData({
+                title:"",
+                genre:"",
+                description:""
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     function handleChange(evt) {
         setBookData(bookData => ({...bookData,[evt.target.name]:evt.target.value}))
     }
 
-    function handleSubmit(e) {
+    /*function handleSubmit(e) {
         e.preventDefault();
         postBook(bookData)
-    };
+    };*/
+
     /*const [title, setTitle] = useState('')
     const [genre, setGenre] = useState('')
     const [description, setDescription] = useState('')
@@ -35,9 +62,9 @@ function AddBookIdea(postBook) {
         e.preventDefault()
     }*/
     return (
-        <div onSubmit={handleSubmit}>
-            <form>
-                <div className="row">
+        <div>
+            <form  onSubmit={handleSubmit}>
+                <div className="row ">
                     <div className="col">
                         <input 
                         type="text"
@@ -66,7 +93,7 @@ function AddBookIdea(postBook) {
                         />
                     </div>
                 </div>
-                <button type="submit" className="btn btn-outline-dark">
+                <button type="submit" className="btn btn-dark">
                     Add book
                 </button>
             </form>
