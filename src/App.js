@@ -4,11 +4,11 @@ import BooksContainer from './Components/books-container/BooksContainer';
 function App() {
   return (
     <div>
-      <div className='align-items-center'>
-        <h3>
+      <div className="App">
+        <h2 className="App-header">
           WRITERS' HUB
           <small className="text-muted"> a community for all writers</small>
-        </h3>
+        </h2>
       </div>
       <BooksContainer />
     </div>
