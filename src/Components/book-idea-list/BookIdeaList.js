@@ -18,7 +18,7 @@ function BookIdeaList({allTransactions}) {
             </tr>
             {allTransactions.map((books) => (
                 <Books
-                key={books.id}
+                key={books.title}
                 books={books} 
                 />
             ))}
