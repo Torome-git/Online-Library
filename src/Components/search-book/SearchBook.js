@@ -1,12 +1,16 @@
 import React from "react";
 
-function SearchBooks({SearchBook, onSearchBookChange}) {
+function SearchBooks({SearchBook, setSearchBook}) {
+
+    function handleChange(e) {
+        setSearchBook(e.target.value)
+    }
     return(
-        <div>
+        <div className="Search-bar">
             <input 
             type="text"
             placeholder="Search by genre"
-            onChange={onSearchBookChange}
+            onChange={handleChange}
             value={SearchBook}
             />
         </div>
