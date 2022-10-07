@@ -35,8 +35,8 @@ function AddBookIdea(postBook) {
         e.preventDefault()
     }*/
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div onSubmit={handleSubmit}>
+            <form>
                 <div className="row">
                     <div className="col">
                         <input 
@@ -66,7 +66,7 @@ function AddBookIdea(postBook) {
                         />
                     </div>
                 </div>
-                <button type="button" className="btn btn-outline-dark">
+                <button type="submit" className="btn btn-outline-dark">
                     Add book
                 </button>
             </form>
