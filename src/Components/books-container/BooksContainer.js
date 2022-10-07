@@ -14,11 +14,7 @@ function BooksContainer({handleAddBook}) {
         .then((data) => {
             setBook(data)
         }, [])
-    })
-
-    const searchFilteredBooks = (evt) => {
-        setSearchBook(evt.target.value)
-    }
+    });
 
     const displaySearchedBooks = book.filter((books) => 
     books.genre.toLowerCase().includes(SearchBook.toLowerCase())
