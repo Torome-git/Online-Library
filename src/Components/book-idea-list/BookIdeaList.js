@@ -3,7 +3,7 @@ import Books from "../books/books";
 
 function BookIdeaList({allTransactions}) {
     return (
-    <table className="table">
+    <table className="table table-bordered">
         <tbody>
             <tr>
                 <th scope="row">
