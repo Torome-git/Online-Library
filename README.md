@@ -2,6 +2,8 @@
 ####  By Torome Soila
 ## Description
 This is a simple React application where writers can share book ideas
+## Project link
+[live-link](https://sparkling-cendol-089135.netlify.app/)
 ### Core Features of the MVP
 - Add a book idea
 - search for an existing book
